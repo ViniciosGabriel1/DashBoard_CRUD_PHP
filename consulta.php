@@ -4,6 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
@@ -36,7 +37,7 @@
         </center>
 
         <!-- Adiciona um formulário para inserir critérios de pesquisa -->
-        <form action="processar_consulta.php" method="post">
+        <form action="processar_consulta.php" method="POST">
             <label for="campo_busca">O que você quer que contenha na consulta? :</label>
             <input type="text" id="campo_busca" name="campo_busca">
             <label for="colunas">Coluna</label>

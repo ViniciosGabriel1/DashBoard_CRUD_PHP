@@ -8,14 +8,22 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Resultado Consulta</title>
     <style>
-        .status-ativo {
-            color: green;
-        }
+    .status-ativo {
+        color: green;
+    }
 
-        .status-inativo {
-            color: red;
-        }
+    .status-inativo {
+        color: red;
+    }
     </style>
+
+
+    <script>
+    function mostrarAlerta() {
+        alert('🩵Status alterado com sucesso!🩵');
+        // Adicione aqui qualquer ação adicional que você deseja realizar ao clicar no link
+    }
+    </script>
 </head>
 <br><br>
 
@@ -53,11 +61,14 @@
             die("Erro de conexão: " . $conexao->connect_error);
         }
 
-        // Query para buscar registros (substitui com a tua própria query)
+        // Use declarações preparadas para evitar SQL injection
         $query = "SELECT * FROM tb_login WHERE $coluna LIKE '%$termo_busca%'";
         $resultado = $conexao->query($query);
+
         echo ("<br><section>");
-        echo ("<form action=''>");
+        echo ("<form action='' method='POST'>");
+
+
         // Verifica se a consulta foi bem-sucedida
         if ($resultado) {
             echo ("<center>");
@@ -66,9 +77,8 @@
             echo ("</center>");
 
             // Exibe os resultados
-
             while ($registro = $resultado->fetch_assoc()) {
-
+                $_id = $registro["id"];
                 $data_cadastro = $registro["data_cadastro"];
 
                 $data_formatada = date('d/m/Y', strtotime($data_cadastro));
@@ -76,27 +86,21 @@
                 echo "<section>";
                 echo "======================================== <br>";
                 echo "<strong> <br>-ID: " . $registro["id"] . " <br>- NOME: " . $registro["nome"] .  "  <br>- SOBRENOME: " . $registro["sobrenome"] .  "  <br>- LOGIN: " . $registro["login"]  . "  <br>- SENHA: " . $registro["senha"] . "  <br>- ESTADO CIVIL: " . $registro["estado_civil"]  . "  <br>- SEXO: " . $registro["sexo"]  . "  <br>- DATA CADASTRO: " . $data_formatada . "  <br>- STATUS: <span class='" . ($registro["status"] == 'ativo' ? 'status-ativo' : 'status-inativo') . "'>" . $registro["status"] . "</span><br>";
-                echo "<br><a href='editar_usuario.php?id=" . $registro['id'] . "' target='_blank'>Editar</a>";
+                echo "<br><a href='editar_usuario.php?id=" . $registro['id'] . "' target='_blank'>Editar Usuário</a><br>";
+                echo "<br><a href='editar_status.php?id=" . $_id . "' onclick='mostrarAlerta()'>Editar Status</a>";
                 echo "<br>======================================= <br>";
                 echo "</section>";
             }
-            echo ("</form>");
         } else {
             echo "Erro na consulta: " . $conexao->error;
         }
+        echo ("</form>");
         echo ("</strong></section>");
-
-
-
-        // Fecha a conexão
-        $conexao->close();
     } else {
-        echo ("<br><section>");
-        echo ("Método usado : GET");
-        echo ("</section>");
+
+        header("location: consulta.php");
     }
-
-
+    $conexao->close();
     ?>
 </body>
 

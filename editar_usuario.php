@@ -41,13 +41,12 @@ while ($linha = mysqli_fetch_array($result)) {
         <option value='Solteiro(a)' " . ($linha['estado_civil'] == 'Solteiro(a)' ? 'selected' : '') . ">Solteiro(a)</option>
         <option value='Casado(a)' " . ($linha['estado_civil'] == 'Casado(a)' ? 'selected' : '') . ">Casado(a)</option>
         <option value='Divorciado(a)' " . ($linha['estado_civil'] == 'Divorciado(a)' ? 'selected' : '') . ">Divorciado(a)</option>
-        <option value='Viúvo(a)' " . ($linha['estado_civil'] == 'Viúvo(a)' ? 'selected' : '') . ">Viúvo(a)</option>
+        
         </select></br>";
     echo "SEXO: <select name='sexo'>
         <option value='Masculino' " . ($linha['sexo'] == 'Masculino' ? 'selected' : '') . ">Masculino</option>
         <option value='Feminino' " . ($linha['sexo'] == 'Feminino' ? 'selected' : '') . ">Feminino</option>
-        <option value='Outro' " . ($linha['sexo'] == 'Outro' ? 'selected' : '') . ">Outro</option
-        ></select></br>";
+       </select></br>";
 
     echo ("<input type='submit'>");
     // Adicione o botão de delete

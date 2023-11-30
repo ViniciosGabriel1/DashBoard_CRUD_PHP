@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Tomorrow&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style1.css">
+
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Formulário</title>
@@ -48,23 +47,18 @@
                 <option value="Solteiro(a)">Solteiro(a)</option>
                 <option value="Casado(a)">Casado(a)</option>
                 <option value="Divorciado(a)">Divorciado(a)</option>
-                <option value="Viúvo(a)">Viúvo(a)</option>
+
             </select>
             <label for="w">Sexo</label>
             <select name="sexo">
                 <option value="Masculino">Masculino</option>
                 <option value="Feminino">Feminino</option>
-                <option value="Todes é minha biloles">Todes é minha biloles</option>
+
             </select>
             <input type="submit">
 
 
     </section>
-
-
-
-    <script src="./script.js"></script>
-
 
 
 </body>
