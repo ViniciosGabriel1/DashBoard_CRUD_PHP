@@ -11,7 +11,9 @@ if (isset($_GET['id'])) {
     $sql = "DELETE FROM tb_login WHERE id = $id";
     if ($conexao->query($sql) === TRUE) {
         echo "<br><br><section>";
+
         echo "Registro deletado com sucesso";
+        header("refresh: 2;url=consulta.php");
         echo "</section>";
     } else {
         echo "<br><br><section>";

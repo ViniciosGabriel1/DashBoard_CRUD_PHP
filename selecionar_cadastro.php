@@ -16,7 +16,7 @@
         <ul class="menu">
             <li><a href="dash.php">Home</a></li>
             <li><a href="login.php">Login</a></li>
-            <li><a href="calculadora.php">Calculadora</a></li>
+
             <li><a href="#">O que fazemos?</a>
                 <ul>
                     <li><a href="estruturaCond.php">Estrutura condicional </a></li>
@@ -31,7 +31,9 @@
         <br><br><br><br><br><br>
     </nav>
 
-
+    <section>
+        <h1>⬇️Listagem de Registros⬇️</h1>
+    </section>
     <table border=1>
         <tr>
             <th>ID</th>
@@ -56,19 +58,19 @@
 
         while ($_rows = mysqli_fetch_array($resultado)) {
         ?>
-            <tr>
-                <td><?php echo $_rows["id"] ?></td>
-                <td><?php echo $_rows["nome"] ?></td>
-                <td><?php echo $_rows["sobrenome"] ?></td>
-                <td><?php echo $_rows["login"] ?></td>
-                <td><?php echo $_rows["senha"] ?></td>
-                <td><?php echo $_rows["estado_civil"] ?></td>
-                <td><?php echo $_rows["sexo"] ?></td>
-                <td><?php echo $_rows["data_cadastro"] ?></td>
-                <td><?php echo $_rows["status"] ?></td>
-                <td><a href=editar_usuario.php?id=<?php echo $_rows['id']; ?>>Editar Usuario</a></td>
-                <td><a href=editar_status.php?id=<?php echo $_rows['id']; ?>>Editar Status</a></td>
-            </tr>
+        <tr>
+            <td><?php echo $_rows["id"] ?></td>
+            <td><?php echo $_rows["nome"] ?></td>
+            <td><?php echo $_rows["sobrenome"] ?></td>
+            <td><?php echo $_rows["login"] ?></td>
+            <td><?php echo $_rows["senha"] ?></td>
+            <td><?php echo $_rows["estado_civil"] ?></td>
+            <td><?php echo $_rows["sexo"] ?></td>
+            <td><?php echo $_rows["data_cadastro"] ?></td>
+            <td><?php echo $_rows["status"] ?></td>
+            <td><a href=editar_usuario.php?id=<?php echo $_rows['id']; ?>>Editar Usuario</a></td>
+            <td><a href=editar_status.php?id=<?php echo $_rows['id']; ?>>Editar Status</a></td>
+        </tr>
         <?php } ?>
     </table>
 

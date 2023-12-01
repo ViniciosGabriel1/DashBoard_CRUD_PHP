@@ -18,7 +18,6 @@
         <ul class="menu">
             <li><a href="dash.php">Home</a></li>
             <li><a href="login.php">Login</a></li>
-            <li><a href="calculadora.php">Calculadora</a></li>
             <li><a href="#">O que fazemos?</a>
                 <ul>
                     <li><a href="estruturaCond.php">Estrutura condicional </a></li>
@@ -33,7 +32,15 @@
         <br><br><br><br><br><br>
     </nav>
     <section>
+
         <form action="cadastrologinCon.php" method="POST"><br>
+            <section>
+                <center>
+                    <h1>⬇️Cadastre-se⬇️</h1>
+                </center>
+            </section>
+
+
             <label for="Usuario">Usuário</label>
             <input type="text" name="login" id="" required>
             <label for="Senha">Senha</label>

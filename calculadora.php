@@ -16,7 +16,6 @@
         <ul class="menu">
             <li><a href="dash.php">Home</a></li>
             <li><a href="login.php">Login</a></li>
-            <li><a href="calculadora.php">Calculadora</a></li>
             <li><a href="#">O que fazemos?</a>
                 <ul>
                     <li><a href="estruturaCond.php">Estrutura condicional </a></li>

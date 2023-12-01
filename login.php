@@ -17,7 +17,6 @@
         <ul class="menu">
             <li><a href="dash.php">Home</a></li>
             <li><a href="login.php">Login</a></li>
-            <li><a href="calculadora.php">Calculadora</a></li>
             <li><a href="#">O que fazemos?</a>
                 <ul>
                     <li><a href="estruturaCond.php">Estrutura condicional </a></li>
@@ -33,7 +32,13 @@
     </nav>
 
     <section>
+
         <form action="verifica_login.php" method="POST"><br>
+            <center>
+                <section>
+                    <h1>⬇️faça seu login⬇️</h1>
+                </section>
+            </center>
             <label for="Usuario">Usuário</label>
             <input type="text" name="login" id="" required>
             <label for="Usuario">Senha</label>
